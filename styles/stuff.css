@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Source+Sans+Pro:wght@300&display=swap");
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+#stuff {
+  position: relative;
+  height: 30vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+#stuff .circle {
+  position: relative;
+  height: 10em;
+  width: 10em;
+  background: #1e4c92;
+  z-index: 99;
+  border-radius: 50%;
+}
+#stuff .circle::before, #stuff .circle::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(30, 76, 146, 0.5);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.6;
+  transform: transition 0.3 ease-out;
+}
+#stuff .circle::before {
+  animation: pulse 2s ease-out infinite;
+}
+#stuff .circle::after {
+  animation: pulse 2s 1s ease-out infinite;
+}
+@keyframes pulse {
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}/*# sourceMappingURL=stuff.css.map */

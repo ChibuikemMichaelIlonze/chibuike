@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Source+Sans+Pro:wght@300&display=swap");
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+#about {
+  position: relative;
+  width: 100%;
+  padding: 4em;
+}
+#about span {
+  position: relative;
+  margin: 2em 0;
+  padding: 4em;
+  height: 20em;
+  width: 20em;
+  background: rgba(14, 14, 14, 0.4);
+  display: grid;
+  place-items: center;
+  border-radius: 0.5em;
+}
+#about span img {
+  position: relative;
+  height: 10em;
+  width: 10em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5em;
+  z-index: 1;
+}
+#about span::before, #about span::after {
+  content: "";
+  position: absolute;
+  background: #1e4c92;
+  height: 10em;
+  width: 10em;
+  display: grid;
+  place-items: center;
+  color: #fefefe;
+}
+#about span::before {
+  top: 0;
+  left: 0;
+}
+#about span::after {
+  bottom: 0;
+  right: 0;
+}/*# sourceMappingURL=about.css.map */

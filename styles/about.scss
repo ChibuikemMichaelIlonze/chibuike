@@ -1,0 +1,53 @@
+@import './main.scss';
+#about{
+    position: relative;
+    width: $width;
+    padding: 4em;
+    span{
+        position: relative;
+        margin: 2em 0;
+        padding: 4em;
+        height: calc($wk-height * 0.2);
+        width: calc($wk-width * 0.2);
+        background: rgba($black, 0.4);
+        display: grid;
+        place-items: center;
+        border-radius: $small-radius;
+        
+        img{
+            position: relative;
+            height: calc($wk-height * 0.1);
+            width: calc($wk-width * 0.1);
+            object-fit: cover;
+            border-radius: $small-radius;
+            z-index: 1;
+            
+           }
+           &::before, &::after{
+            content: '';
+            position: absolute;
+          
+            background: $blue;
+            height: calc($wk-height * 0.1);
+            width: calc($wk-width * 0.1);
+            display: grid;
+            place-items: center;
+            color: $white;
+            
+            
+
+           }
+           &::before{
+            top: 0;
+            left: 0;
+
+           }
+
+           &::after{
+            bottom:0;
+            right: 0;
+
+           }
+    }
+    
+}
