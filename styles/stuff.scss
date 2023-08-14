@@ -1,42 +1,44 @@
-@import './main.scss';
+@import "./main.scss";
 
-#stuff{
+#stuff {
+  position: relative;
+  height: calc($height * 0.3);
+  width: $width;
+  display: grid;
+  place-items: center;
+
+  .circle {
     position: relative;
-    height: calc($height * 0.3);
-    width: $width;
-    display: grid;
-    place-items: center;
+    height: calc($wk-height * 0.1);
+    width: calc($wk-width * 0.1);
+    background: $blue;
+    z-index: 99;
+    border-radius: $radius;
 
-    .circle{
-        position: relative;
-        height: calc($wk-height * 0.1);
-        width: calc($wk-width * 0.1);
-        background: $blue;
-        z-index: 99;
-        border-radius: $radius;
-        
-        &::before, &::after{
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background: rgba($blue, 0.5);
-            border-radius: $radius;
-            z-index: -1;
-            opacity: 0.6;
-            transform: transition .3 ease-out;
-        }
-        &::before{
-            animation: pulse 2s ease-out infinite;
-        }
-        &::after{
-            animation: pulse 2s 1s ease-out infinite;
-        }
-
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: rgba($blue, 0.5);
+      border-radius: $radius;
+      z-index: -1;
+      opacity: 0.6;
+      transform: transition 0.3 ease-out;
     }
-
-    @keyframes pulse {
-        100%{transform: scale(2); opacity:0 ;}
+    &::before {
+      animation: pulse 2s ease-out infinite;
     }
+    &::after {
+      animation: pulse 2s 1s ease-out infinite;
+    }
+  }
 
+  @keyframes pulse {
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
 }
